@@ -2,17 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Welcome to Hogwarts!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Hogwarts</title>
+    <link rel="stylesheet" href="SH-style-home.css">
+    <link rel="stylesheet" href="SH-style-sort.css">
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <ul>
-
-          <a href="/students">Students</a><br>
-          <a href="/students/new">Add a Student</a>
-
-      </ul>
-    </nav>
+    <h1>Welcome to<br>
+      Hogwarts School of Witchcraft and Wizardry!</h1>
+      <nav>
+        <ul>
+            <a href="/students">Students</a><br>
+            <a href="/students/new">Add a Student</a><br>
+            <a href="/SH">Sorting Hat</a>
+        </ul>
+      </nav>
     <%= yield %>
   </body>
 </html>

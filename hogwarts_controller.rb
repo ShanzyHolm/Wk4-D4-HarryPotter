@@ -1,9 +1,30 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require('pry-byebug')
+require('pry')
+
+require_relative('./models/SH-sort.rb')
 require_relative('./models/student.rb')
 require_relative('./models/house.rb')
 also_reload('./models/*')
+
+get '/SH' do
+  erb(:SHhome)
+end
+
+get '/SH/sort' do
+  erb(:SHsort)
+end
+
+# get '/result' do
+#   erb(:result)
+# end
+
+post '/SH/result' do
+  house_array = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+  sort = Sort.new(house_name = house_array.sample())
+  @sort = sort.house_sort()
+  erb(:SHresult)
+end
 
 # INDEX
 get '/students' do

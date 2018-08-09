@@ -2,15 +2,16 @@ require('sinatra')
 require('sinatra/contrib/all')
 require('pry')
 
-require_relative('models/sort.rb')
+require_relative('models/SH-sort.rb')
 require_relative('models/student.rb')
+require_relative('models/house.rb')
 also_reload('models/*')
 
-get '/' do
+get '/SH' do
   erb(:home)
 end
 
-get '/sort' do
+get '/SH/sort' do
   erb(:sort)
 end
 
@@ -18,7 +19,7 @@ end
 #   erb(:result)
 # end
 
-post '/result' do
+post '/SH/result' do
   house_array = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
   sort = Sort.new(house_name = house_array.sample())
   @sort = sort.house_sort()
@@ -30,13 +31,6 @@ end
 #   sort = Sort.new(:options = house_array.sample())
 #   @comparison = sort.house_sort()
 #   erb(:sort)
-# end
-
-# get '/rps/:hand1' do
-#   rock_paper_scissors_array = ["rock", "paper", "scissors"]
-#   game = Game.new(hand1 = params[:hand1], hand2 = rock_paper_scissors_array.sample())
-#   @comparison = game.rock_paper_scissors()
-#   erb(:result)
 # end
 
 # get '/students/sort' do
