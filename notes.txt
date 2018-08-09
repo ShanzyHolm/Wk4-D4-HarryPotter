@@ -1,0 +1,8 @@
+# Step 1 - Create the database
+createdb hogwarts
+
+Step 2 - Create the table
+psql -d hogwarts -f db/hogwarts.sql
+
+# Step 3 - Seed the database
+ruby db/seeds.rb
