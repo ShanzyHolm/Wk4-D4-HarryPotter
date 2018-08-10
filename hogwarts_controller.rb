@@ -7,9 +7,18 @@ require_relative('./models/student.rb')
 require_relative('./models/house.rb')
 also_reload('./models/*')
 
-get '/SH' do
-  erb(:SHhome)
+get '/' do
+  erb(:home)
 end
+
+get '/students/new' do
+  @houses = House.all()
+  erb (:SHhome)
+end
+
+# get '/SH' do
+#   erb(:SHhome)
+# end
 
 get '/SH/sort' do
   erb(:SHsort)
@@ -33,10 +42,10 @@ get '/students' do
 end
 
 # NEW
-get '/students/new' do
-  @houses = House.all()
-  erb (:new)
-end
+# get '/students/new' do
+#   @houses = House.all()
+#   erb (:new)
+# end
 
 # SORT
 get '/students/sort' do
