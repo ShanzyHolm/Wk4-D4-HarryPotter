@@ -1,3 +1,6 @@
+<h1>Welcome to<br>
+  Hogwarts School of Witchcraft and Wizardry!</h1>
+
 <form action="/students" method="post">
 
   <label for="first-name">First Name: </label>
@@ -6,15 +9,15 @@
   <label for="second-name">Second Name: </label>
   <input id="second-name" type="text" name="second_name">
 
+  <label for="house-select">Select a House: </label>
+     <select id="house-select" name="house_id">
+       <% @houses.each do |house| %>
+        <option value="<%= house.id().to_i%>"> <%=house.name()%></option>
+        <% end %>
+     </select>
+
   <label for="age">Age: </label>
   <input id="age" type="number" name="age">
-
-  <label for="house-select">Select a House: </label>
-   <select id="house-select" name="house_id">
-     <% @houses.each do |house| %>
-      <option value="<%= house.id().to_i%>"> <%=house.name()%></option>
-      <% end %>
-   </select>
 
   <input type="submit" value="Add student">
 

@@ -1,21 +1,28 @@
-<form action="/students" method="post">
+<h1>Welcome to<br>
+  Hogwarts School of Witchcraft and Wizardry!</h1>
 
-  <label for="first-name">First Name: </label>
-  <input id="first-name" type="text" name="first_name">
+<h3>Hmm, interesting. Yes, yes, VERY interesting indeed!  This will not be an easy task, I see.
+  <br>
+  <br>
+But where to put you??  Yes, where indeed!  I think I will need a bit more information before I decide...</h3>
 
-  <label for="second-name">Second Name: </label>
-  <input id="second-name" type="text" name="second_name">
+  <div class="grid">
+    <div class="grid-row">
+      <div class="cell">
+        <form action="/students/result" method="get">
 
-  <label for="house-select">Select a House: </label>
-     <select id="house-select" name="house_id">
-       <% @houses.each do |house| %>
-        <option value="<%= house.id().to_i%>"> <%=house.name()%></option>
-        <% end %>
-     </select>
+          <label for="first-name">First Name: </label>
+          <input id="first-name" type="text" name="first_name">
 
-  <label for="age">Age: </label>
-  <input id="age" type="number" name="age">
+          <label for="last-name">Last Name: </label>
+          <input id="last-name" type="text" name="last_name">
 
-  <input type="submit" value="Add student">
-
-</form>
+          <label for="age">Age: </label>
+          <input id="age" type="number" name="age">
+          <br>
+          <br>
+          <input type="submit" value="Give Information" style="height:50px; width:500px; ; font-size:20px">
+        </form>
+      </div>
+    </div>
+  </div>

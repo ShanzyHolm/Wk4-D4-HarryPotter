@@ -10,6 +10,16 @@ h1 {
   margin-bottom: 2px;
 }
 
+.home-header {
+  font-size: 45pt;
+}
+
+#sort {
+  background-color: green;
+  width: 30em;
+  height: 4em;
+}
+
 h2 {
   font-family: 'Niconne', cursive;
   font-size: 25pt;
@@ -46,12 +56,4 @@ h3 {
 
 /* #description {
   border: 5px solid black;
-} */
-
-/* #sort_button {
-  background-color: #4CAF50;
-  font-size: 16px;
-  padding: 14px 40px;
-  border-radius: 8px;
-  width: 250px;
 } */
